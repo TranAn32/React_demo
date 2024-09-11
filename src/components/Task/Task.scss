@@ -1,0 +1,39 @@
+.task {
+  margin: 100px 0 0 300px;
+  &__row {
+    & th{
+      width: 250px;
+      text-align: center;
+      margin-bottom: 20px;
+      &:nth-child(1){
+        width: 30px;
+      }
+      &:nth-child(2){
+        width: 100px;
+      }
+      
+    } 
+    
+  }
+  &__item{
+    & td {
+      text-align: center;
+      margin-bottom: 20px;
+      &:nth-child(1){
+        width: 60px;
+      }
+    }
+    &-buttonEdit , &-buttonDelete{
+      margin-right: 10px;
+      border: none;
+      background-color: yellow;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    &-buttonDelete{
+      background-color: red;
+      color: white;
+    }
+  }
+}
