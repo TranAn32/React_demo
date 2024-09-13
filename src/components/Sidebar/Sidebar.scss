@@ -20,29 +20,49 @@ $gray :#cccccc80;
   background-color:rgba(95, 94, 94, 0.1);
   box-shadow: 0 4px 8px rgba(95, 94, 94, 0.1);
   &__list{
+    transition: color 0.3s ease, font-weight 0.3s ease, font-size 0.3s ease;
     // Ngăn bôi đen
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;     /* Internet Explorer/Edge */
-    user-select: none;         /* Standard syntax */
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none; 
+    user-select: none; 
+
   }
   &__Account{
+    position: absolute;
     width: 230px;
     text-align: center;
     height: 50px;
     border-bottom: 1px solid #ccc;
     border-right: 1px solid #ccc;
-    
+    &-menu{
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 1.3rem;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      &:hover{
+        background-color: $gray;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(95, 94, 94, 0.1);
+      }
+    }
   }
 
   &__item {
     margin-top: 10px;
     width: 100%;
     padding: 10px 30px;
+    padding-left: 20px;
     color: $dark-text;
     font-weight: 400;
     font-size: 1.2rem;
     margin-bottom: 10px;
+    &:first-child{
+      margin-top: 70px;
+    }
     &-text-icon{
       color: $dark-text;
       margin-right: 0.8rem;
@@ -57,8 +77,8 @@ $gray :#cccccc80;
       background-color:$main-color ;
       border-radius: 5px;
       box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+      font-weight: 600;
     }
-    
   }
   &__list-dropdownMenu{
     margin-left: 2rem;
@@ -69,9 +89,27 @@ $gray :#cccccc80;
     font-size: 1.2rem;
     margin-bottom: 10px;
     cursor: pointer;
-    &-item-icon{
-      color: darkred;
-      margin-right: 10px;
+    transition: max-height 0.5s ease-out;
+    &-item {
+      transition: color 0.3s ease, font-weight 0.3s ease, font-size 0.3s ease, max-height 0.5s ease, opacity 0.5s ease;
+      max-height: 0;
+      &-icon {
+        color: darkred;
+        margin-right: 10px;
+      }
+    
+      &:hover {
+        color: $main-color; 
+        font-weight: 600;
+        font-size: 1.4rem;
+      } 
     }
+    &.open {
+      max-height: 300px;
+      transition: max-height 2s ease;
+    }
+    
   }
 }
+
+

@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import './Sidebar.scss';
+import { toggleMenu } from './helpers';
 
 function Sidebar() {
-  const [isOpen, setIsOpen] = useState(false); 
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen); 
-  };
-
+  const [isOpenTask, setIsOpen] = useState(false);
+ 
   return (
     <div className="sidebar">
-      <div className="sidebar__Account">Acc</div>
+      <div className="sidebar__Account">Acc
+        <div className="sidebar__Account-menu">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
       <div className="sidebar__list">
         <div className="sidebar__item">
           <a className="sidebar__item-text">
@@ -28,7 +29,7 @@ function Sidebar() {
             Trang chủ
           </a>
         </div>
-        <div className="sidebar__item" onClick={toggleMenu}>
+        <div className={"sidebar__item ${isOpenTask ? 'open' : ''}"} onClick={() => toggleMenu(isOpenTask, setIsOpen)}>
           <a className="sidebar__item-text" >
             <span className="sidebar__item-text-icon">
               <i className="fa-solid fa-list-check"></i>
@@ -37,7 +38,7 @@ function Sidebar() {
           </a>
           
         </div>
-        {isOpen && (
+        {isOpenTask && (
             <div className="sidebar__list-dropdownMenu">
               <td className="sidebar__list-dropdownMenu-item">
                 <span className='sidebar__list-dropdownMenu-item-icon'><i class="fa-solid fa-bullseye"></i></span>
@@ -51,7 +52,7 @@ function Sidebar() {
               <span className='sidebar__list-dropdownMenu-item-icon'><i class="fa-solid fa-bullseye"></i></span>
                 project 3</td>
             </div>
-          )}
+        )}
       </div>
     </div>
   );

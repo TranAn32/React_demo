@@ -55,7 +55,11 @@
       justify-content: space-between; 
       padding: 10px;
       border-top: 1px solid #ddd;
-      
+      &.completed {
+        text-decoration: line-through; // Gạch đi nội dung
+        opacity: 0.6; // Tùy chọn để giảm độ sáng của mục đã hoàn thành
+      }
+    
       &__item:hover{
         border: 1px solid #ddd;
       }
