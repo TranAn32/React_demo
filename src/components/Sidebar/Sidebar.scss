@@ -1,6 +1,8 @@
-$sidebar-bg: #118D9E;
+$sidebar-bg: #ffffff;
 $white-text: #FFFFFF;
 $dark-text: #434A53;
+$main-color : #ffa874;
+$gray :#cccccc80;
 
 *{
   padding: 0;
@@ -9,26 +11,67 @@ $dark-text: #434A53;
 }
 
 .sidebar {
-  width: 250px;
-  height: 100vh;
-  background-color: $sidebar-bg;
   position: fixed;
+  padding-top: 20px;
+  width: 230px;
+  height: 100vh;
   top: 0;
   left: 0;
-
-  &__logo {
-    padding: 15px 15px 15px 0;
-    margin-bottom: 20px;
+  background-color:rgba(95, 94, 94, 0.1);
+  box-shadow: 0 4px 8px rgba(95, 94, 94, 0.1);
+  &__list{
+    // Ngăn bôi đen
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+    user-select: none;         /* Standard syntax */
+  }
+  &__Account{
+    width: 230px;
+    text-align: center;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    
   }
 
   &__item {
+    margin-top: 10px;
     width: 100%;
-    padding: 15px 20px;
-    color: $white-text;
-    font-weight: 600;
+    padding: 10px 30px;
+    color: $dark-text;
+    font-weight: 400;
     font-size: 1.2rem;
+    margin-bottom: 10px;
+    &-text-icon{
+      color: $dark-text;
+      margin-right: 0.8rem;
+      font-size: 1.6rem;
+      &:hover{
+        color: #FFFFFF;
+      }
+    }
+    cursor: pointer;
     &:hover {
-      background-color: #067382;
+      color: $white-text;
+      background-color:$main-color ;
+      border-radius: 5px;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+  }
+  &__list-dropdownMenu{
+    margin-left: 2rem;
+    width: 100%;
+    padding: 10px 30px;
+    color: $dark-text;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &-item-icon{
+      color: darkred;
+      margin-right: 10px;
     }
   }
 }

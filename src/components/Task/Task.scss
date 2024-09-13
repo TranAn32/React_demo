@@ -1,39 +1,170 @@
-.task {
-  margin: 100px 0 0 300px;
-  &__row {
-    & th{
-      width: 250px;
-      text-align: center;
-      margin-bottom: 20px;
-      &:nth-child(1){
-        width: 30px;
-      }
-      &:nth-child(2){
-        width: 100px;
-      }
-      
-    } 
-    
+.page{
+  margin: 10px 0 0 250px;
+  font-size: 1.2rem;
+  font-weight: 450;
+}
+.task-container{
+  width: 64%;
+  margin: 100px 0 0 380px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  &:hover{
+    cursor: pointer;
   }
-  &__item{
-    & td {
-      text-align: center;
-      margin-bottom: 20px;
-      &:nth-child(1){
-        width: 60px;
-      }
-    }
-    &-buttonEdit , &-buttonDelete{
-      margin-right: 10px;
-      border: none;
-      background-color: yellow;
-      padding: 5px;
-      border-radius: 5px;
+  .task__header{
+    &:hover{
+      border-radius: 10px;
+      border: 1px solid #ddd;
       cursor: pointer;
     }
-    &-buttonDelete{
-      background-color: red;
-      color: white;
+    &-name{
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 10px;
+      padding-bottom: 0;
+    }
+    &-items{
+      margin-left: 20px;
+      font-size: 0.9rem;
+      padding-bottom: 10px;
+      &-item{
+        font-weight: 500;
+  
+      }
+  }
+  
+  }
+  .task {
+    padding-left: 20px;
+    padding-right: 20px;
+    &__row {
+      &-buttonSelectAll {
+        width: 70px;
+        height: 20px;
+        font-weight: 600;
+        border: none;
+        background-color: yellow;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  
+    &__item {
+      display: flex;
+      align-items: center; 
+      justify-content: space-between; 
+      padding: 10px;
+      border-top: 1px solid #ddd;
+      
+      &__item:hover{
+        border: 1px solid #ddd;
+      }
+  
+      &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+  
+      &-main {
+        display: flex;
+        align-items: center;
+        margin-bottom: 3px;
+  
+        input {
+          margin-right: 10px;
+        }
+  
+        span {
+          font-weight: bold;
+        }
+        &-text{
+          font-size: 1.1rem;
+        }
+      }
+  
+      &-info {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        color: #666;
+        width: 100%;
+        margin-left: 30px;
+      }
+  
+      &-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+  
+  
+        &-buttonEdit,
+        &-buttonDelete {
+          width: 2rem;
+          height: 2rem;
+          font-size: 1.2rem;
+          margin-right: 10px;
+          border: none;
+          padding: 5px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          color: #666;
+        }
+  
+        &-buttonEdit:hover {
+          background-color: #ffc107;
+        }
+  
+        &-buttonDelete:hover {
+          color: #fff;
+          background-color: darkred;
+        }
+        
+      }
     }
   }
+  
 }
+
+.task__item input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #a81f00;
+  margin-top: 5px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  background-color: #fff; 
+}
+
+
+.task__item input[type="checkbox"]:checked::after {
+  content: "✓"; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+.task__item input[type="checkbox"]:checked {
+  background-color: #a81f00;
+  border-color: #a81f00;
+}
+.task__item input[type="checkbox"]:hover {
+  background-color: #a81f00;
+  border-color: #a81f00;
+}
+
