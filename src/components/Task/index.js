@@ -11,16 +11,16 @@ function Task() {
       .then((data) => setData(data));
   }, []);
 
-  console.log(data);
-  const handleCheckboxChange = (id) => {
-    const updatedData = data.map((item) => {
-      if (item.id === id) {
-        return { ...item, completed: !item.completed };
-      }
-      return item;
-    });
-    setData(updatedData);
-  };
+  // console.log(data);
+  // const handleCheckboxChange = (id) => {
+  //   const updatedData = data.map((item) => {
+  //     if (item.id === id) {
+  //       return { ...item, completed: !item.completed };
+  //     }
+  //     return item;
+  //   });
+  //   setData(updatedData);
+  // };
 
     return (
       <>
@@ -41,8 +41,8 @@ function Task() {
                   <div className="task__item-content">
                     <div className="task__item-main">
                       <input type="checkbox" 
-                        checked={item.completed}
-                        onChange={() => handleCheckboxChange(item.index)}
+                        // checked={item.completed}
+                        // onChange={() => handleCheckboxChange(item.index)}
                       />
                       <span className="task__item-main-text">{item.title}</span>
                     </div>
